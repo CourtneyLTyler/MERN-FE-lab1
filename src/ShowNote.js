@@ -12,6 +12,7 @@ constructor (props) {
     this.state = {
      note: []
     }
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount () {
@@ -35,7 +36,9 @@ constructor (props) {
   }
 
 handleDelete=() => {
-    
+    this.setState({
+        note: note.pop(this.state.note)
+    })
 }
 
 
