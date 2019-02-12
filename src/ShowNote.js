@@ -34,6 +34,11 @@ constructor (props) {
       })
   }
 
+handleDelete=() => {
+    
+}
+
+
 render() {
     // this is empty
     console.log(this.state.title)
@@ -42,7 +47,7 @@ render() {
         <div key={this.state.note.title}>
             <p>{this.state.note.title}</p>
             <p>{this.state.note.content}</p>
-            <button type="delete">Delete</button>
+            <button type="delete" onClick={this.handleDelete}>Delete</button>
         </div>
         )
     }

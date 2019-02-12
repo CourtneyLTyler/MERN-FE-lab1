@@ -4,28 +4,28 @@ import axios from 'axios'
 
 class ListNotes extends Component {
 
-    constructor (props) {
-        console.log("in the constructor")
-        super(props)
-        this.state = {
-         notes: []
-        }
-      }
+    // constructor (props) {
+    //     console.log("in the constructor")
+    //     super(props)
+    //     this.state = {
+    //      notes: []
+    //     }
+    //   }
 
-      componentDidMount () {
-        console.log("did mount")
-        axios.get('http://localhost:3002/api/notes')
-          .then((res) => {
-            console.log(res)
-            this.setState({
-              notes: res.data
-            })
-            console.log(this.state.notes)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-      }
+    //   componentDidMount () {
+    //     console.log("did mount")
+    //     axios.get('http://localhost:3002/api/notes')
+    //       .then((res) => {
+    //         console.log(res)
+    //         this.setState({
+    //           notes: res.data
+    //         })
+    //         console.log(this.state.notes)
+    //       })
+    //       .catch((err) => {
+    //         console.log(err)
+    //       })
+    //   }
 
     render() {
         console.log(this.state.notes)
