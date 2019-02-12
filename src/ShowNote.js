@@ -5,14 +5,6 @@ const notesURL = 'http://localhost:3002/api/notes/'
 
 class ShowNote extends Component {
 
-//     render() {
-//         return (
-//             <div>
-                
-//             </div>
-//         );
-//     }
-// }
 
 constructor (props) {
     console.log("in the shownote constructor")
@@ -24,8 +16,8 @@ constructor (props) {
 
   componentDidMount () {
 
-    const noteid = this.state.id;
-    console.log(noteid)
+    const noteid = this.props.match.params.id
+    console.log(`${notesURL}${noteid}`)
     const url = `${notesURL}${noteid}`
 
     console.log("did mount in showpage")
@@ -44,12 +36,13 @@ constructor (props) {
 
 render() {
     // this is empty
-    console.log(this.state.note)
+    console.log(this.state.title)
 
         return (
-        <div key={this.state.title}>
-            <p>{this.state.title}</p>
-            <p>{this.state.content}</p>
+        <div key={this.state.note.title}>
+            <p>{this.state.note.title}</p>
+            <p>{this.state.note.content}</p>
+            <button type="delete">Delete</button>
         </div>
         )
     }
