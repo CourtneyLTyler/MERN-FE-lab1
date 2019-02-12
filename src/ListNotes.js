@@ -28,8 +28,8 @@ class ListNotes extends Component {
     //   }
 
     render() {
-        console.log(this.state.notes)
-        let list = this.state.notes.map(cv => {
+        console.log(this.props.notes)
+        let list = this.props.notes.map(cv => {
             return (
             <div key={cv.title}>
                 {/* <Link to="/notes/:id"><p>{cv.title}</p></Link> */}

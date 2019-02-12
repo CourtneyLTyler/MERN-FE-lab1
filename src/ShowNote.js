@@ -36,9 +36,24 @@ constructor (props) {
   }
 
 handleDelete=() => {
-    this.setState({
-        note: note.pop(this.state.note)
-    })
+    const noteid = this.props.match.params.id
+    console.log(`${notesURL}${noteid}`)
+    const url = `${notesURL}${noteid}`
+    axios.delete(url)
+        .then(res => {
+            console.log(res.data)
+            // render() {
+            //     return (
+            //         < ListNotes />
+            //     )
+            res.redirect('/')
+        })
+        
+        .catch(function (response) {
+          // handle error
+          console.log(response)
+        })
+    
 }
 
 
