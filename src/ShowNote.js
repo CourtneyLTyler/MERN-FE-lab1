@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const notesURL = 'http://localhost:3002/api/notes/'
 
@@ -42,11 +43,6 @@ handleDelete=() => {
     axios.delete(url)
         .then(res => {
             console.log(res.data)
-            // render() {
-            //     return (
-            //         < ListNotes />
-            //     )
-            res.redirect('/')
         })
         
         .catch(function (response) {
@@ -65,7 +61,9 @@ render() {
         <div key={this.state.note.title}>
             <p>{this.state.note.title}</p>
             <p>{this.state.note.content}</p>
+            <Link to="/">
             <button type="delete" onClick={this.handleDelete}>Delete</button>
+            </Link>
         </div>
         )
     }
