@@ -41,15 +41,18 @@ handleDelete=() => {
     console.log(`${notesURL}${noteid}`)
     const url = `${notesURL}${noteid}`
     axios.delete(url)
-        .then(res => {
+        .then((res) => {
             console.log(res.data)
+            this.setState({
+                    note: []
+            })
         })
-        
-        .catch(function (response) {
-          // handle error
-          console.log(response)
+        .then ((res) => {
+            res.redirect('/')
         })
-    
+        .catch((err)=> {
+          console.log(err)
+        })
 }
 
 
@@ -62,7 +65,7 @@ render() {
             <p>{this.state.note.title}</p>
             <p>{this.state.note.content}</p>
             <Link to="/">
-            <button type="delete" onClick={this.handleDelete}>Delete</button>
+           <a href="/"> <button value="delete" type="submit"onClick={this.handleDelete}>Delete</button></a>
             </Link>
         </div>
         )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+// import axios from 'axios'
 // import {Link} from  'react-router-dom'
+// require('supertest')
 
 class ListNotes extends Component {
 
@@ -27,8 +28,10 @@ class ListNotes extends Component {
     //       })
     //   }
 
+
     render() {
         console.log(this.props.notes)
+        if(this.props.notes) {
         let list = this.props.notes.map(cv => {
             return (
             <div key={cv.title}>
@@ -38,12 +41,13 @@ class ListNotes extends Component {
                 
             </div>
             )
+            
         })
         return (
             <div>
                 {list}
             </div>
-        );
+        );}
     }
 }
 
