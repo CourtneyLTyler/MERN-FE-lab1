@@ -57,7 +57,6 @@ handleDelete=() => {
 
 
 render() {
-    // this is empty
     console.log(this.state.title)
 
         return (

@@ -8,7 +8,6 @@ import axios from 'axios'
 
 class App extends Component {
 
-
   constructor (props) {
     console.log("in the constructor")
     super(props)
@@ -16,13 +15,6 @@ class App extends Component {
      notes: []
     }
   }
-
-  // setNotes (res) {
-  //   this.setState({
-  //     notes: res
-  //   })
-  // }
-
 
   componentDidMount () {
     console.log("did mount")
@@ -46,8 +38,7 @@ class App extends Component {
 
         <main>
           < Switch>
-            {/* <Route path='/:id' /> */}
-    <Route path='/notes/:id' render={(routerProps)=>< ShowNote {...routerProps} {...this.state} />} />
+            <Route path='/notes/:id' render={(routerProps)=>< ShowNote {...routerProps} {...this.state} />} />
             <Route path='/' render={(routerProps)=>< ListNotes  {...routerProps} {...this.state} notes={this.state.notes} />}/>
           </Switch>
         </main>
