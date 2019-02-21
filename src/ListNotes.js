@@ -21,6 +21,5 @@ class ListNotes extends Component {
     }
 }
 
-
 export default ListNotes;
 
